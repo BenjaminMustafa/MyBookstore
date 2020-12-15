@@ -14,7 +14,7 @@
 }
 
 .box {
-	border: 1px solid red;
+	border: 1px solid #ff0080;
 }
 .page-top {
 	margin-top: -70px;
@@ -22,15 +22,10 @@
 .section-headline {
 	font-family: 'times New Roman' , Times, serif;
 	font-size:40px;
-	color: #c0c0c0;
+	color: rgb(255, 0, 128);
 	margin: auto;
 	padding-left:20px;
 	text-align: center;
-}
-.Userspan {
-	background-color: #231F20;
-	padding: 5px 22px;
-	border-radius: 80%;
 }
 
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="common-header">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,8 +13,8 @@
 <!-- NAVBAR -->
 		<div th:fragment="navbar">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-		<img alt="logo" src="/images/logo.png">
-      <a class="navbar-brand" href="#" style="padding-left:10px;">My Bookstore</a>
+		<img alt="logo" src="https://raw.githubusercontent.com/BenjaminMustafa/MyBookstore/master/src/main/resources/static/images/logo.png">
+      <a class="navbar-brand" href="/" style="padding-left:10px;">My Bookstore</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,7 +26,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-success" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-success" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-warning" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -39,8 +39,9 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
         	<li><a class="nav-link" href="#">ShopingCart</a></li>
-        	<li><a class="nav-link" href="myAccount">MyAccount</a></li>
-        	<li><a class="nav-link" href="#">Logout</a></li>
+        	<li><a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/Login}">Login</a></li>
+        	<li><a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/myProfile}">My Account</a></li>
+        	<li><a class="nav-link" sec:authorize="isAuthenticated()" href="@{/logout}">Logout</a></li>
         </ul>
       </div>
     </nav>
