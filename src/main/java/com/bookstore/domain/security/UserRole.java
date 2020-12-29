@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.bookstore.domain.User;
+
 @Entity
 @Table(name="user_role")
 public class UserRole {
